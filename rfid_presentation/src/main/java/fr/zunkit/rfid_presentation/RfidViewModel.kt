@@ -9,6 +9,15 @@ import javax.inject.Inject
 @HiltViewModel
 class RfidViewModel @Inject constructor() :
     ViewModel() {
+    private val _uiState = MutableStateFlow(RfidState())
+    val uiState: StateFlow<RfidState> = _uiState
 
-
+    fun handleAuthenticationEvent(event: RfidEvent) {
+        if (event is RfidEvent.Connected) {
+            _uiState.value = uiState.value.build {
+                name = "connected"
+            }
+//            connected()
+        }
+    }
 }

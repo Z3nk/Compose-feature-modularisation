@@ -3,13 +3,8 @@ package fr.zunkit.logpadv3
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
@@ -22,6 +17,9 @@ import fr.zunkit.authentication.AuthenticationViewModel
 import fr.zunkit.logpadv3.ui.theme.LogpadV3Theme
 import fr.zunkit.navigation.AuthenticationDirections
 import fr.zunkit.navigation.NavigationManager
+import fr.zunkit.navigation.RfidDirections
+import fr.zunkit.rfid_presentation.Rfid
+import fr.zunkit.rfid_presentation.RfidViewModel
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -56,21 +54,13 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     navigation(
-                        startDestination = AuthenticationDirections.dashboard.destination,
-                        route = DashboardDirections.root.destination
+                        startDestination = AuthenticationDirections.rfid.destination,
+                        route = RfidDirections.root.destination
                     ) {
-                        composable(AuthenticationDirections.dashboard.destination) {
-                            Dashboard(
-                                navController.hiltNavGraphViewModel(
-                                    route = AuthenticationDirections.dashboard.destination
-                                )
-                            )
-                        }
-                        composable(DashboardDirections.creation.destination) {
-                            Creation(
-                                navController.hiltNavGraphViewModel(
-                                    route = DashboardDirections.creation.destination
-                                )
+                        composable(AuthenticationDirections.rfid.destination) {
+                            val vm = hiltViewModel<RfidViewModel>()
+                            Rfid(
+                                vm
                             )
                         }
                     }

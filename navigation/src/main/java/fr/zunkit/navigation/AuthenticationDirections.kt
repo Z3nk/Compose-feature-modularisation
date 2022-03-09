@@ -29,11 +29,11 @@ object AuthenticationDirections {
 
     }
 
-    val dashboard = object : NavigationCommand {
+    val rfid = object : NavigationCommand {
 
         override val arguments = emptyList<NamedNavArgument>()
 
-        override val destination = "dashboard"
+        override val destination = "rfid"
     }
 
     val forgotPassword = object : NavigationCommand {

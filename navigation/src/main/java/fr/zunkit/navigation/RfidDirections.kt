@@ -2,7 +2,7 @@ package fr.zunkit.navigation
 
 import androidx.navigation.NamedNavArgument
 
-object DashboardDirections {
+object RfidDirections {
 
     val root = object : NavigationCommand {
 
@@ -12,11 +12,11 @@ object DashboardDirections {
 
     }
 
-    val creation = object : NavigationCommand {
+    val connection = object : NavigationCommand {
 
         override val arguments = emptyList<NamedNavArgument>()
 
-        override val destination = "creation"
+        override val destination = "connection"
 
     }
 }
