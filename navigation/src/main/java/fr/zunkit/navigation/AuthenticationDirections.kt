@@ -29,7 +29,7 @@ object AuthenticationDirections {
 
     }
 
-    val rfid = object : NavigationCommand {
+    val Success = object : NavigationCommand {
 
         override val arguments = emptyList<NamedNavArgument>()
 
@@ -41,6 +41,5 @@ object AuthenticationDirections {
         override val arguments = emptyList<NamedNavArgument>()
 
         override val destination = "forgot_password"
-
     }
 }

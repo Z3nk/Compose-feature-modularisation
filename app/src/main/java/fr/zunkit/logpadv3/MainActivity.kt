@@ -54,10 +54,10 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                     navigation(
-                        startDestination = AuthenticationDirections.rfid.destination,
+                        startDestination = AuthenticationDirections.forgotPassword.destination,
                         route = RfidDirections.root.destination
                     ) {
-                        composable(AuthenticationDirections.rfid.destination) {
+                        composable(AuthenticationDirections.Success.destination) {
                             val vm = hiltViewModel<RfidViewModel>()
                             Rfid(
                                 vm

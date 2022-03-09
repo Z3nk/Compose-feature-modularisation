@@ -17,6 +17,5 @@ object RfidDirections {
         override val arguments = emptyList<NamedNavArgument>()
 
         override val destination = "connection"
-
     }
 }

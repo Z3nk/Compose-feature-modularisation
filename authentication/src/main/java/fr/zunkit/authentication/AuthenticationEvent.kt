@@ -2,7 +2,6 @@ package fr.zunkit.authentication
 
 sealed class AuthenticationEvent {
 
-    object AuthenticationModeToggled : AuthenticationEvent()
     object DismissErrorDialog : AuthenticationEvent()
     object AuthenticateClicked : AuthenticationEvent()
     object ForgotPasswordClicked : AuthenticationEvent()
