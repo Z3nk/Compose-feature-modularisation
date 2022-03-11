@@ -7,19 +7,22 @@ import androidx.compose.runtime.getValue
 
 @Composable
 fun Rfid(
-    viewModel: RfidViewModel
+    viewModel: RfidViewModel,
+    name: String
 ) {
     val state by viewModel.uiState.collectAsState()
     Rfid(
         viewState = state,
-        events = viewModel::handleAuthenticationEvent
+        events = viewModel::handleRfidDeviceEvent,
+        name = name
     )
 }
 
 @Composable
 private fun Rfid(
     viewState: RfidState,
-    events: (event: RfidEvent) -> Unit
+    events: (event: RfidEvent) -> Unit,
+    name: String
 ) {
-    Text(text = "Hello RFID !")
+    Text(text = "Hello RFID $name !")
 }

@@ -1,6 +1,7 @@
-package fr.zunkit.navigation
+package fr.zunkit.navigation.features.authentications
 
 import androidx.navigation.NamedNavArgument
+import fr.zunkit.navigation.NavigationCommand
 
 
 object AuthenticationDirections {
@@ -21,25 +22,10 @@ object AuthenticationDirections {
 
     }
 
-    val Default = object : NavigationCommand {
+    val default = object : NavigationCommand {
 
         override val arguments = emptyList<NamedNavArgument>()
 
         override val destination = ""
-
-    }
-
-    val Success = object : NavigationCommand {
-
-        override val arguments = emptyList<NamedNavArgument>()
-
-        override val destination = "rfid"
-    }
-
-    val forgotPassword = object : NavigationCommand {
-
-        override val arguments = emptyList<NamedNavArgument>()
-
-        override val destination = "forgot_password"
     }
 }

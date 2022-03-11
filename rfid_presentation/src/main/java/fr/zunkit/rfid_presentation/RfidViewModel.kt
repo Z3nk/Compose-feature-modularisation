@@ -12,7 +12,7 @@ class RfidViewModel @Inject constructor() :
     private val _uiState = MutableStateFlow(RfidState())
     val uiState: StateFlow<RfidState> = _uiState
 
-    fun handleAuthenticationEvent(event: RfidEvent) {
+    fun handleRfidDeviceEvent(event: RfidEvent) {
         if (event is RfidEvent.Connected) {
             _uiState.value = uiState.value.build {
                 name = "connected"

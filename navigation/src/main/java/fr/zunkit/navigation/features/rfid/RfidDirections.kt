@@ -1,6 +1,7 @@
-package fr.zunkit.navigation
+package fr.zunkit.navigation.features.rfid
 
 import androidx.navigation.NamedNavArgument
+import fr.zunkit.navigation.NavigationCommand
 
 object RfidDirections {
 
@@ -12,10 +13,10 @@ object RfidDirections {
 
     }
 
-    val connection = object : NavigationCommand {
+    val list = object : NavigationCommand {
 
         override val arguments = emptyList<NamedNavArgument>()
 
-        override val destination = "connection"
+        override val destination = "list"
     }
 }
