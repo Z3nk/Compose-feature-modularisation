@@ -6,6 +6,7 @@ import fr.zunkit.navigation.NavigationEvent
 import fr.zunkit.navigation.NavigationManager
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
@@ -15,17 +16,16 @@ class AuthenticationViewModel @Inject constructor(private val navigationManager:
     private val _uiState = MutableStateFlow(AuthenticationState())
     val uiState: StateFlow<AuthenticationState> = _uiState
 
-    fun handleAuthenticationEvent(event: AuthenticationEvent) {
-        _uiState.value = uiState.value.build {
-            when (event) {
-                AuthenticationEvent.AuthenticateClicked -> {
-                    _uiState.value = uiState.value.build {
-                        loading = true
-                    }
-                    navigationManager.event(NavigationEvent.OnAuthentificated)
-                }
-            }
+    init{
+        _uiState.update {
+            it.copy(emailAddress = "damien.gaillard.partner@decathlon.com")
         }
+    }
+    fun handleAuthenticationEvent(event: AuthenticationEvent) {
+        _uiState.update {
+            it.copy(isLoading = true)
+        }
+        navigationManager.event(NavigationEvent.OnAuthentificated)
     }
 
 }
