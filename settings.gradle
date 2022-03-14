@@ -14,6 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "logpadV3"
 include ':app'
-include ':authentication'
+include ':authentication_presentation'
 include ':navigation'
 include ':rfid_presentation'

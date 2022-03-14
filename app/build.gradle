@@ -52,7 +52,7 @@ dependencies {
     // PROJECTS
     implementation project(path: ':navigation')
     implementation project(path: ':rfid_presentation')
-    implementation project(path: ':authentication')
+    implementation project(path: ':authentication_presentation')
 
     // LIBRARIES
     implementation 'androidx.hilt:hilt-navigation-compose:1.0.0'
